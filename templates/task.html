@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+
+{% block body %}
+
+<body id="page-top">
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+            <div class="d-flex justify-content-center">
+                <div class="text-center">
+                    <h1 class="mx-auto my-0 text-uppercase">To-do Task</h1>
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5"></h2>
+                    <a class="btn btn-primary" href="#create">View</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Create-->
+    <section class="signup-section" id="create">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5">
+                <div class="col-md-10 col-lg-8 mx-auto text-center">
+                    <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+                    <h2 class="text-white mb-5">My Tasks</h2>
+                    {% if tasks|length < 1 %}
+                    <h4 style="text-align: center" class="text-white-50 mx-auto mt-2 mb-5">
+                    There are no tasks. Create one below!</h4>
+                    {% else %}
+                    <table class="col-lg-8 col-lg-8 mx-auto text-center" class="table table-hover" width="70">
+                        <tr>
+                            <th class="text-white mb-4">Task</th>
+                            {% if showDDL %}
+                            <th class="text-white mb-4">DDL</th>
+                            {% endif %}
+                            <th class="text-white mb-4">Actions</th>
+                        </tr>
+                        {% for task in tasks %}
+                            <tr>
+                                <td class="mb-0 text-white">{{ task.content }}</td>
+                                {% if showDDL %}
+                                <td class="mb-0 text-white">{{ task.date_completed}}</td>
+                                {% endif %}
+                                <td>
+                                    <a type="button" class="btn btn-outline-info btn-sm"
+                                        href="/delete/{{task.id}}">Delete</a>
+                                    <br>
+                                    <a type="button" class="btn btn-outline-info btn-sm"
+                                        href="/update/{{task.id}}">Update</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                    {% endif %}
+                    <br>
+                    <div class="container px-4 px-lg-5">
+                        <div class="row gx-4 gx-lg-5">
+                            <div class="col-md-10 col-lg-8 mx-auto text-center">
+                                <h2 class="text-white mb-5"> </h2>
+                                <div class="form">
+                                    <form action="/task" method="POST">
+                                        <div class="col"><input class="form-control" name="content" id="content"
+                                                type="text" placeholder="Create a new one..."></div>
+                                        <br>
+                                        {% if showDDL %}
+                                        <div class="col"><input class="form-control" name="date_completed"
+                                                id="date_completed" type="date" placeholder="Set a DDL..."></div>
+                                        <br>
+                                        {% endif %}
+                                        <input type="submit" class="btn btn-info btn-sm" value="Add Task">
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+{% endblock %}

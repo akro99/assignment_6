@@ -1,0 +1,100 @@
+
+{% extends 'base.html' %}
+
+{% block body %}
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+                <div class="d-flex justify-content-center">
+                    <div class="text-center">
+                        <h1 class="mx-auto my-0 text-uppercase">Welcome</h1>
+                        <h2 class="text-white-50 mx-auto mt-2 mb-5">It's nice to meet you.</h2>
+                        <a class="btn btn-primary" href="#about">Know more</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- About-->
+        <section class="about-section text-center" id="about">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8">
+                            <h2 class="section-heading text-muted">Services</h2>
+                            <h4 class="section-subheading text-white-50">Anything You Want Just Let Me Cater To You.</h4>
+                            <br>
+                            <br>
+                    </div>
+                        <div class="row text-center">
+                            <div class="col-md-4">
+                                <span class="fa-stack fa-4x">
+                                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                                    <i class="fas fa-shopping-cart fa-stack-1x fa-inverse"></i>
+                                </span>
+                                <h4 class="text-muted">Authority</h4>
+                                <p class="text-white-50">Provide credible ranking list of similar products based on consumer's reviews.</p>
+                            </div>
+                            <div class="col-md-4">
+                                <span class="fa-stack fa-4x">
+                                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                                    <i class="fas fa-laptop fa-stack-1x fa-inverse"></i>
+                                </span>
+                                <h4 class="text-muted">Community</h4>
+                                <p class="text-white-50">Exchange idle items online.</p>
+                            </div>
+                            <div class="col-md-4">
+                                <span class="fa-stack fa-4x">
+                                    <i class="fas fa-circle fa-stack-2x text-primary"></i>
+                                    <i class="fas fa-lock fa-stack-1x fa-inverse"></i>
+                                </span>
+                                <h4 class="text-muted">Security</h4>
+                                <p class="text-white-50">Strict membership management.</p>
+                            </div>
+                        </div>
+                    </div>
+    
+            </div>
+        </section>
+    
+        <!-- Contact-->
+        <section class="contact-section bg-black">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-map-marked-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Address</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50">4923 Market Street, Orlando FL</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-envelope text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Email</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50"><a href="#!">hello@pickmeup.com</a></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-3 mb-md-0">
+                        <div class="card py-4 h-100">
+                            <div class="card-body text-center">
+                                <i class="fas fa-mobile-alt text-primary mb-2"></i>
+                                <h4 class="text-uppercase m-0">Phone</h4>
+                                <hr class="my-4 mx-auto" />
+                                <div class="small text-black-50">+1 (555) 902-8832</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="social d-flex justify-content-center">
+                    <a class="mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                    <a class="mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                    <a class="mx-2" href="#!"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </section>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<body id="page-top">
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+            <div class="d-flex justify-content-center">
+                <div class="text-center">
+                    <h1 class="md-auto my-0 text-uppercase">Task Update</h1>
+                    <div class="col-md-10 col-lg-8 mx-auto text-center">
+                        <h2 class="text-white mb-5"> </h2>
+                        <div class="form">
+                            <form action="/update/{{task.id}}" method="POST">
+                                <input class="form-control" name="content" id="content" type="text"
+                                    value="{{task.content}}">
+                                <br>
+                                {% if showDDL %}
+                                <div class="col"><input class="form-control" name="date_completed" id="date_completed"
+                                        type="date" placeholder="Set a DDL..."></div>
+                                {% endif %}
+                                <br>
+                                <input type="submit" class="btn btn-outline-info btn-sm" value="Update">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </header>
+</body>
+{% endblock %}
